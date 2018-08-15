@@ -27,10 +27,7 @@ export class SandBox extends Component {
                     displayMode: props.displayMode
                 };
 
-                this.changeDisplayMode = this.changeDisplayMode.bind(this);
-                this.getDisplayTime = this.getDisplayTime.bind(this);
-
-                setInterval(e => {
+                setInterval(() =>  {
                     const newState = {
                         now: (new Date())
                     };
@@ -38,7 +35,7 @@ export class SandBox extends Component {
                 });
 
             }
-            getDatetimeFormat(newDate) {
+            getDatetimeFormat = (newDate) => {
                 const year = newDate.getFullYear();
                 const month = newDate.getMonth() + 1;
                 const day = newDate.getDate();
@@ -49,7 +46,7 @@ export class SandBox extends Component {
                     <p>{year}/{month}/{day} {hour}:{minute}:{second}</p>
                 );
             }
-            getTimeFormat(newDate) {
+            getTimeFormat = (newDate) => {
                 const hour = newDate.getHours();
                 const minute = newDate.getMinutes();
                 const second = newDate.getSeconds();
@@ -57,8 +54,8 @@ export class SandBox extends Component {
                     <p>{hour}:{minute}:{second}</p>
                 );
             }
-            getDisplayTime() {
-                switch(this.state.displayMode) {
+            getDisplayTime = () => {
+                switch (this.state.displayMode) {
                     case 'Time':
                         return this.getTimeFormat(this.state.now);
                     case 'Datetime':
@@ -67,7 +64,7 @@ export class SandBox extends Component {
                         return (<div>error</div>);
                 }
             }
-            changeDisplayMode(){
+            changeDisplayMode = () => {
                 let newDisplayMode = '';
                 switch (this.state.displayMode) {
                     case 'Time':
@@ -84,10 +81,10 @@ export class SandBox extends Component {
                 };
                 this.setState(newState);
             }
-            render() {
+            render = () => {
                 return (
                     <div onClick={this.changeDisplayMode}>
-                        <this.getDisplayTime></this.getDisplayTime>
+                        {this.getDisplayTime()}
                     </div>
                 );
             }
