@@ -27,7 +27,7 @@
   to { transform: rotate(360deg); }
 }
 
-.sand-box-frame {
+.sand-box-frame, .flux-test-compo-frame {
   border: solid;
   border-color: #fcc;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { SandBox } from './SandBox';
+import {FluxTestCompo} from './FluxTestCompo';
 
 class App extends Component {
   render() {
@@ -16,6 +17,9 @@ class App extends Component {
         </p>
         <div className="sand-box-frame">
           <SandBox></SandBox>
+        </div>
+        <div className="flux-test-compo-frame">
+          <FluxTestCompo />
         </div>
       </div>
     );
